@@ -1,15 +1,15 @@
 browser.menus.create({
-  id: "reload-pinafore",
-  title: "Reload Pinafore",
-  documentUrlPatterns: ["https://pinafore.social/*"]
+  id: "reload-semaphore",
+  title: "Reload Semaphore",
+  documentUrlPatterns: ["https://semaphore.social/*"]
 });
 
 function reloadSidebar() {
-  browser.sidebarAction.setPanel({ panel: "https://pinafore.social" });
+  browser.sidebarAction.setPanel({ panel: "https://semaphore.social" });
 }
 
 browser.menus.onClicked.addListener(function (info, tab) {
-  if (info.menuItemId == "reload-pinafore") {
+  if (info.menuItemId == "reload-semaphore") {
     browser.sidebarAction.getPanel({}).then(reloadSidebar)
   }
 });
